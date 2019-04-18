@@ -14,6 +14,10 @@ RUN pip install -r requirements.txt
 
 # Run the application:
 ADD main.py .
+ADD lru.py .
+
+HEALTHCHECK --interval=5m --timeout=3s \
+	CMD curl -f http://localhost:${APP_PORT} || exit 1
 
 EXPOSE ${APP_PORT}
 

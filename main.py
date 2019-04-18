@@ -74,7 +74,7 @@ def get_image(url):
 
 app = Flask(__name__)
 
-params = { 'APP_PORT': 3000 }
+params = { 'APP_PORT': '3000' }
 
 for _, v in enumerate(KEYS):
    if v in os.environ:
@@ -129,5 +129,5 @@ if __name__ == '__main__':
    if len(params) < 4:
       print('Error missing requirement params: MARVEL_PUBLIC, MARVEL_PRIVATE')
       exit(0)
-   print('Running on port %d' %params['APP_PORT'])
+   print('Running on port ', params['APP_PORT'])
    app.run(port=int(params['APP_PORT']), debug=True)
