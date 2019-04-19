@@ -130,4 +130,4 @@ if __name__ == '__main__':
       print('Error missing requirement params: MARVEL_PUBLIC, MARVEL_PRIVATE')
       exit(0)
    print('Running on port ', params['APP_PORT'])
-   app.run(port=int(params['APP_PORT']), debug=True)
+   app.run(port=int(params['APP_PORT']), debug=False, host='0.0.0.0')

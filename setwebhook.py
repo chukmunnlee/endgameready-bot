@@ -5,7 +5,7 @@ from pprint import pprint
 
 KEYS = [ 'APP_PORT', 'MARVEL_PUBLIC', 'MARVEL_PRIVATE', 'TELEGRAM_TOKEN' ]
 
-params = { 'app_port': 3000 }
+params = { 'APP_PORT': '3000' }
 
 for _, v in enumerate(KEYS):
    if v in os.environ:
@@ -22,7 +22,7 @@ print(bot('getme'))
 r = requests.get(bot('getme'))
 pprint(r.json())
 
-r = requests.get(bot('setwebhook'), data = { 'url': sys.argv[1] })
+r = requests.post(bot('setwebhook'), data = { 'url': sys.argv[1] })
 pprint(r.json())
 
 r = requests.get(bot('getwebhookinfo'))
